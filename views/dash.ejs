@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/frontend.js"></script>
+
+    <style>
+      .logged, .not-logged {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <h1>Dashboard</h1>
+    <div class="logged">logged</div>
+    <div class="not-logged">not logged</div>
+
+  <script type="text/javascript">
+      getData()
+        .then(() => {
+          const dom = document.querySelector('.logged')
+          dom.style['display'] = 'block'
+        })
+        .catch(() => {
+          const dom = document.querySelector('.not-logged')
+          dom.style['display'] = 'block'
+        })
+    </script>
+  </body>
+</html>

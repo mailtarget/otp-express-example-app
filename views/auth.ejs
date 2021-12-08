@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/frontend.js"></script>
+  </head>
+  <body>
+    <a href="/">relogin</a>
+    <h1>checkin...</h1>
+
+    <p>token: <%= token %></p>
+    
+    <script type="text/javascript">
+      var token = '<%= token %>'
+      getStatus()
+    </script>
+  </body>
+</html>
