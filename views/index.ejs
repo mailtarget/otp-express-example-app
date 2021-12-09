@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    
-    <form action="/users/login" method="post">
-      <div class="form-group">
-        <label for="input-email">Email</label>
-        <input type="text" name="email" id="input-email" value="timenmail+otp@gmail.com" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/spectre.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="/javascripts/frontend.js"></script>
+
+  <style>
+    .logged, .not-logged {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container mx-auto">
+  <div class="columns">
+    <div class="col-6 col-mx-auto">
+      <h1>Hello World!</h1>
+      <div class="logged">
+        <div class="logged-content">
+          <h2 class="text-primary bg-gray">Yes, you are awesome</h2>
+          <button class="btn-link btn" onclick="logout()">Log me out</button>
+        </div>
       </div>
-
-      <div class="form-group">
-        <button>Login</button>
+      <div class="not-logged">
+        <p>Login to view content.</p>
+        <a class="btn-primary btn" href="/login">Login</a>
       </div>
-    </form>
+    </div>
+  </div>
+</div>
 
 
-  </body>
+
+<script type="text/javascript">
+  getData()
+    .then(() => {
+      const dom = document.querySelector('.logged')
+      dom.style['display'] = 'block'
+    })
+    .catch(() => {
+      const dom = document.querySelector('.not-logged')
+      dom.style['display'] = 'block'
+    })
+</script>
+</body>
 </html>
+
+
+

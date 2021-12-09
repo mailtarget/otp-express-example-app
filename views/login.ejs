@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="/stylesheets/spectre.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="container mx-auto">
+    <div class="columns">
+      <div class="col-6 col-mx-auto">
+        <h1>Login to view content</h1>
+
+        <form action="/users/login" method="post">
+          <div class="form-group">
+            <label class="form-label" for="input-email">Insert your email</label>
+            <input class="form-input" type="text" name="email" id="input-email" />
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

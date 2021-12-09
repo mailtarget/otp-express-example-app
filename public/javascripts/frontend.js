@@ -2,7 +2,7 @@ function getStatus () {
   fetch('/users/status/' + token)
   .then(result => {
     return Promise.all([result.json(), result.status])
-    
+
   })
   .then(result => {
     console.log('fe', result)
@@ -10,7 +10,7 @@ function getStatus () {
     if (status === 200) {
       localStorage.token = data.token
       console.log('redirect to dashboard')
-      // window.location.href = '/dashboard'
+      window.location.href = '/'
     } else if (status === 401 && data.code === 'verifyException') {
       // retry
       setTimeout(() => {
@@ -18,7 +18,7 @@ function getStatus () {
       }, 5000)
     } else if (status === 401 && data.code === 'tokenException') {
       console.log('redirect to expired token')
-      // window.location.href = '/expired'
+      window.location.href = '/expired'
     }
   })
 }
@@ -40,4 +40,10 @@ function getData () {
     .catch(err => {
       return Promise.reject(err)
     })
+}
+
+function logout () {
+  localStorage.removeItem('token')
+  console.log('logged out.')
+  window.location.href = '/'
 }

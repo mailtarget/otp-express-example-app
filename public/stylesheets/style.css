@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.not-logged, .logged-content {
+  border: 1px solid #ddd;
+  padding: 3rem 1rem;
+  text-align: center;
+}

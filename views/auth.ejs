@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/stylesheets/spectre.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/frontend.js"></script>
   </head>
   <body>
-    <a href="/">relogin</a>
-    <h1>checkin...</h1>
 
-    <p>token: <%= token %></p>
-    
+  <div class="container mx-auto">
+    <div class="columns">
+      <div class="col-6 col-mx-auto">
+        <h1>Confirm OTP Email</h1>
+
+        <p>Please check your mailbox and follow verifying process from email that we send, if done, comeback here again.</p>
+      </div>
+    </div>
+  </div>
+
+
     <script type="text/javascript">
       var token = '<%= token %>'
       getStatus()
